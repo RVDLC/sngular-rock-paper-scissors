@@ -1,0 +1,63 @@
+body {
+  background-color: darkslategrey;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+header {
+  position: fixed;
+  display: block;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.main {
+  position: absolute;
+  display: block;
+  margin-top: 20px;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+}  
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nameInput {
+  margin-bottom: 20px;
+}
+.nameInput, .loginButton {
+  width: 90%;
+  max-width: 400px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.App-logo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.handImages {
+  width: 100%;
+  max-width: 500px
+}
+.handImage {
+  width: 15%;
+  padding: 2.5%;
+}
