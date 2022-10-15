@@ -4,7 +4,6 @@ import Player from '../components/Player'
 
 const Home = props => {
   const [playerName, setPlayerName] = useState('');
-  // const [logedPlayer, setLogedPlayer] = useState();
 
   const setNewPlayer = name => {
     const newPlayer = new Player(name)

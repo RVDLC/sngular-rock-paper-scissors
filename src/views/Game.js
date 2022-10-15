@@ -20,15 +20,13 @@ const Game = props => {
 
     async function playGame(hand) {
         resultText(hand);
-        console.log(hand)
         await new Promise(resolve => setTimeout(resolve, 1000));
 
         const result = getResult(hand);
 
         resultText(hand,result[0],result[1])
-        console.log(result[0]);
 
-        result[1] === 1 && props.logedPlayer.gameWin();
+        result[0] === 1 && props.logedPlayer.gameWin();
         setWonGames(props.logedPlayer.getWinCount());
     }
 
