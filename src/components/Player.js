@@ -1,7 +1,7 @@
 class Player {
-    constructor(name) {
+    constructor(name, winCount) {
         this.name = name;
-        this.winCount = 0;
+        this.winCount = winCount || 0;
     }
 
     getName() {

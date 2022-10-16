@@ -9,6 +9,7 @@ import spock from '../styles/Spock.png';
 const Game = props => {
     const [wonGames, setWonGames] = useState(props.logedPlayer.getWinCount());
     const [gameResult, setGameResult] = useState('');
+    const [prevAi, setPrevAi] = useState('');
     const handNameList = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'];
     const text = ['loses','wins','draws'];
 
@@ -22,30 +23,33 @@ const Game = props => {
         resultText(hand);
         await new Promise(resolve => setTimeout(resolve, 1000));
 
-        const result = getResult(hand);
+        const aiChoice = getResult(hand, prevAi);
 
-        resultText(hand,result[0],result[1])
-
-        result[0] === 1 && props.logedPlayer.gameWin();
+        setPrevAi(aiChoice.aiHand);
+        resultText(hand,aiChoice.result,aiChoice.aiHand)
+        aiChoice.result === 1 && props.logedPlayer.gameWin();
         setWonGames(props.logedPlayer.getWinCount());
+
+        localStorage.setItem('playerList', JSON.stringify(props.playerList));
     }
+    
 
   return (
     <div className='gameDiv main'>
-        <div className='playerName'>
+        <div className='playerName' data-testid='playerName'>
             { props.logedPlayer.getName() }
         </div>
-        <div className='playerWins'>
+        <div className='playerWins' data-testid='playerWins'>
             { wonGames }
         </div>
         <div className='handImages'>
-            <img src={rock} className='handImage rock' alt='rock' onClick={e => playGame(0)}/>
+            <img src={rock} className='handImage rock' alt='rock' data-testid='handRock' onClick={e => playGame(0)}/>
             <img src={paper} className='handImage paper' alt='paper' onClick={e => playGame(1)}/>
             <img src={scissor} className='handImage scissor' alt='scissor' onClick={e => playGame(2)}/>
             <img src={lizard} className='handImage lizard' alt='lizard' onClick={e => playGame(4)}/>
             <img src={spock} className='handImage spock' alt='spock' onClick={e => playGame(3)}/>
         </div>
-        <div className='resultContainer'>
+        <div className='resultContainer' data-testid='resultContainer'>
             { gameResult }
         </div>
     </div>
