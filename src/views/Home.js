@@ -23,7 +23,7 @@ const Home = props => {
   return (
     <div className='loginForm main'>
       <div className='nameContainer'>
-          <input type='text' className='nameInput' placeholder='Player Name' onChange={e => setPlayerName(e.target.value)}/>
+          <input type='text' data-testid='playerInput' className='nameInput' placeholder='Player Name' onChange={e => setPlayerName(e.target.value)}/>
       </div>
       <div className='submitContainer'>
           <button type="submit" className='loginButton' onClick={joinPlayer}>Join</button>

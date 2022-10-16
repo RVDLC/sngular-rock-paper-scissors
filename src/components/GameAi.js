@@ -3,8 +3,12 @@ const getRandomMachine = () => {
     return result;
 };
 
-export const getResult = (userInput) => {
-    const aiInput = getRandomMachine()
+export const getResult = (userInput, previousResult) => {
+    let aiInput = getRandomMachine();
+    while (aiInput === previousResult) {
+        console.log(aiInput);
+        aiInput = getRandomMachine();
+    }
     const checkEven = (userInput + aiInput) % 2;
     const checkBigger = userInput < aiInput;
     let result;
