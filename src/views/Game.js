@@ -23,11 +23,11 @@ const Game = props => {
         resultText(hand);
         await new Promise(resolve => setTimeout(resolve, 1000));
 
-        const result = getResult(hand, prevAi);
+        const aiChoice = getResult(hand, prevAi);
 
-        setPrevAi(result[1]);
-        resultText(hand,result[0],result[1])
-        result[0] === 1 && props.logedPlayer.gameWin();
+        setPrevAi(aiChoice.aiHand);
+        resultText(hand,aiChoice.result,aiChoice.aiHand)
+        aiChoice.result === 1 && props.logedPlayer.gameWin();
         setWonGames(props.logedPlayer.getWinCount());
 
         localStorage.setItem('playerList', JSON.stringify(props.playerList));

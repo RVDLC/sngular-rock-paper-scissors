@@ -2,14 +2,14 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 
-const playerTestName = 'Durin'
+const testPlayerName = 'Durin'
 let playerInput, buttonJoin;
 
 beforeEach(async () => {
   render(<App/>)
   playerInput = screen.getByTestId('playerInput');
   buttonJoin = screen.getByRole('button', { name: 'Join' });
-  userEvent.type(playerInput, playerTestName);
+  userEvent.type(playerInput, testPlayerName);
 });
 
 test('renders the home page', () => {
@@ -19,7 +19,7 @@ test('renders the home page', () => {
 test('Logs in correctly', () => {
   userEvent.click(buttonJoin);
   
-  expect(screen.getByTestId('playerName').textContent).toBe(playerTestName);
+  expect(screen.getByTestId('playerName').textContent).toBe(testPlayerName);
 });
 
 test('the game is executed correctly', async () => {
