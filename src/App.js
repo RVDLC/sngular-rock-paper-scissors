@@ -7,7 +7,7 @@ import Player from './components/Player';
 
 function App() {
   const [playerList, setPlayerList] = useState([]);
-  const [logedPlayer, setLogedPlayer] = useState(false);
+  const [loggedPlayer, setLoggedPlayer] = useState(false);
 
   useEffect(() => {
     const loadList = JSON.parse(localStorage.getItem('playerList'));
@@ -21,12 +21,9 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
-        {
-          logedPlayer && <button className='logoutButton' onClick={e => setLogedPlayer(false)}>Log out</button>
-        }
       </header>
         {
-          !logedPlayer ? <Home playerList={playerList} playerListManagement={setPlayerList} logedPlayerManagement={setLogedPlayer} /> : <Game  playerList={playerList} logedPlayer={logedPlayer}/>
+          !loggedPlayer ? <Home playerList={playerList} playerListManagement={setPlayerList} loggedPlayerManagement={setLoggedPlayer} /> : <Game  playerList={playerList} loggedPlayer={loggedPlayer} loggedPlayerManagement={setLoggedPlayer}/>
         }
     </div>
   );

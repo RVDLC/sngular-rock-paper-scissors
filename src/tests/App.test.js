@@ -19,7 +19,7 @@ test('renders the home page', () => {
 test('Logs in correctly', () => {
   userEvent.click(buttonJoin);
   
-  expect(screen.getByTestId('playerName').textContent).toBe(testPlayerName);
+  expect(screen.getByTestId('playerName').textContent).toBe(`Welcome ${testPlayerName}`);
 });
 
 test('the game is executed correctly', async () => {

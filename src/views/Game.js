@@ -7,7 +7,7 @@ import lizard from '../styles/Lizard.png';
 import spock from '../styles/Spock.png';
 
 const Game = props => {
-    const [wonGames, setWonGames] = useState(props.logedPlayer.getWinCount());
+    const [wonGames, setWonGames] = useState(props.loggedPlayer.getWinCount());
     const [gameResult, setGameResult] = useState('');
     const [prevAi, setPrevAi] = useState('');
     const handNameList = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'];
@@ -27,8 +27,8 @@ const Game = props => {
 
         setPrevAi(aiChoice.aiHand);
         resultText(hand,aiChoice.result,aiChoice.aiHand)
-        aiChoice.result === 1 && props.logedPlayer.gameWin();
-        setWonGames(props.logedPlayer.getWinCount());
+        aiChoice.result === 1 && props.loggedPlayer.gameWin();
+        setWonGames(props.loggedPlayer.getWinCount());
 
         localStorage.setItem('playerList', JSON.stringify(props.playerList));
     }
@@ -37,12 +37,16 @@ const Game = props => {
   return (
     <div className='gameDiv main'>
         <div className='playerName' data-testid='playerName'>
-            { props.logedPlayer.getName() }
+            Welcome { props.loggedPlayer.getName() }
+            <i onClick={e => props.loggedPlayerManagement(false)} className="fa fa-sign-out"></i>
         </div>
         <div className='playerWins' data-testid='playerWins'>
-            { wonGames }
+            Your current score: { wonGames }
         </div>
         <div className='handImages'>
+        {
+            (!gameResult.includes('Oponent') && gameResult.includes('Your')) && <div className='coverHands'><div className='lds-dual-ring'></div></div>
+        }
             <img src={rock} className='handImage rock' alt='rock' data-testid='handRock' onClick={e => playGame(0)}/>
             <img src={paper} className='handImage paper' alt='paper' onClick={e => playGame(1)}/>
             <img src={scissor} className='handImage scissor' alt='scissor' onClick={e => playGame(2)}/>
