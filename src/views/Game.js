@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getResult } from '../components/GameAi'
+import { getResult } from '../components/gameAi'
 import rock from '../styles/Rock.png';
 import paper from '../styles/Paper.png';
 import scissor from '../styles/Scissor.png';
