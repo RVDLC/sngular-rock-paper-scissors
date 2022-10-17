@@ -15,7 +15,7 @@ const Game = props => {
 
     const resultText = (playerHand, comparison, aiHand) => {
         const startigText = `Your ${handNameList[playerHand]}`
-        const finalText = typeof comparison !== 'undefined' ? `${startigText} ${text[comparison]} to Oponent's ${handNameList[aiHand]}` : startigText;
+        const finalText = typeof comparison !== 'undefined' ? `${startigText} ${text[comparison]} to Opponent's ${handNameList[aiHand]}` : startigText;
         setGameResult(finalText)
     }
 
@@ -45,7 +45,7 @@ const Game = props => {
         </div>
         <div className='handImages'>
         {
-            (!gameResult.includes('Oponent') && gameResult.includes('Your')) && <div className='coverHands'><div className='lds-dual-ring'></div></div>
+            (!gameResult.includes('Opponent') && gameResult.includes('Your')) && <div className='coverHands'><div className='lds-dual-ring'></div></div>
         }
             <img src={rock} className='handImage rock' alt='rock' data-testid='handRock' onClick={e => playGame(0)}/>
             <img src={paper} className='handImage paper' alt='paper' onClick={e => playGame(1)}/>
