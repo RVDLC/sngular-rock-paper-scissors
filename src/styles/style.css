@@ -1,3 +1,4 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 body {
   background-color: darkslategrey;
   margin: 0;
@@ -19,7 +20,7 @@ header {
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 10%;
+  height: 30%;
   width: 100%;
   text-align: center;
 }
@@ -27,10 +28,9 @@ header {
 .main {
   position: absolute;
   display: block;
-  margin-top: 20px;
-  top: 10%;
   width: 100%;
   text-align: center;
+  top: 40%;
 }  
 
 code {
@@ -46,18 +46,70 @@ code {
   max-width: 400px;
   padding: 5px;
   box-sizing: border-box;
+  border-radius: 10px;
 }
-
+.resultContainer, .errorDisplay, .playerWins {
+  font-size: x-large;
+  margin: 5%;
+}
+.playerName {
+  width: 90%;
+  height: 20%;
+  margin: auto;
+  background-color: rgb(88, 126, 126);
+  padding: 10px;
+  border-radius: 10px;
+}
+.fa-sign-out {
+  float: right;
+}
 .App-logo {
   max-width: 100%;
   max-height: 100%;
 }
-
 .handImages {
   width: 100%;
-  max-width: 500px
+  max-width: 500px;
+  margin: auto;
+  position: relative; 
 }
 .handImage {
   width: 15%;
   padding: 2.5%;
+}
+.errorDisplay {
+  color: red;
+}
+.coverHands {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  background-color: black;
+  opacity: 50%;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  height: 100%;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin-top: 30%;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
