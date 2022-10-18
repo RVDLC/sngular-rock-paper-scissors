@@ -1,4 +1,4 @@
-# Mandatory software needed in order to make the project work in local
+## Mandatory software needed in order to make the project work in local
 In order to open this project in local you will need to have the lastest Node.js installed.
 
 ## Steps to execute the project
