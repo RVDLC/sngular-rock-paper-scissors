@@ -59,6 +59,7 @@ code {
   background-color: rgb(88, 126, 126);
   padding: 10px;
   border-radius: 10px;
+  max-width: 500px;
 }
 .fa-sign-out {
   float: right;

@@ -28,10 +28,10 @@ test('the game is executed correctly', async () => {
   userEvent.click(screen.getByTestId('handRock'));
   
   expect(screen.getByTestId('resultContainer').textContent).toBe('Your Rock');
-  expect(screen.getByTestId('resultContainer').textContent).not.toContain('Oponent');
+  expect(screen.getByTestId('resultContainer').textContent).not.toContain('Opponent');
 
   await waitFor(() => {
-    expect(screen.getByTestId('resultContainer').textContent).toContain('Oponent');
+    expect(screen.getByTestId('resultContainer').textContent).toContain('Opponent');
   },{timeout:2000});
 
 });
